@@ -12,10 +12,10 @@ class Record():
         obj_json = {"recordDateTime": self.record_time, "recordValue": self.record_value, "sensorId": self.sensor_id, "unit": self.unit}
         return (obj_json)
 
-    def update(self):
+    def update(self, list_records):
         url = 'http://localhost:53034/api/record'
         headers={'Content-type':'application/json', 'Accept':'application/json'}                    
-        x = requests.post(url, json=self.obj,headers=headers)        
+        x = requests.post(url, json=list_records,headers=headers)        
         if(x.status_code == 200):
             return True
         else:
