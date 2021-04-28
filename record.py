@@ -13,7 +13,7 @@ class Record():
         return (obj_json)
 
     def update(self, list_records):
-        url = 'http://localhost:53034/api/record'
+        url = 'http://localhost:53034/api/record/list'
         headers={'Content-type':'application/json', 'Accept':'application/json'}                    
         x = requests.post(url, json=list_records,headers=headers)        
         if(x.status_code == 200):
