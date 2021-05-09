@@ -16,7 +16,7 @@ for list_linha in dados_brutos:
     value = linha[-1].replace("%", "")
     id_sensor = '23'
     unit = '%'
-    record = Record(timedate, value, id_sensor, unit)
+    record = Record(timedate, float(value), int(id_sensor), unit)
     list_records.append(record.obj)
 
 
